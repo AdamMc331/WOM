@@ -1,6 +1,7 @@
 package com.adammcneilly.wom
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -11,12 +12,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
+import androidx.lifecycle.lifecycleScope
+import com.adammcneilly.wom.api.WiseOldManAPI
 import com.adammcneilly.wom.theme.WOMTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val api = WiseOldManAPI.getDefault()
+
+        lifecycleScope.launch {
+            val player = api.getPlayer("theadammc331")
+            Log.d("ADAM_LOG", player.toString())
+        }
 
         configureEdgeToEdgeWindow()
 
