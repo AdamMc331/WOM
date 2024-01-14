@@ -11,6 +11,7 @@ fun debugSkillList(): List<Skill> {
  * Returns a [Skill] instance for a given [SkillType]. Random numbers match Adam's snapshot
  * at the time of setting up this debug instance.
  */
+@Suppress("MagicNumber")
 fun SkillType.debugSkill(): Skill {
     val level = when (this) {
         SkillType.ATTACK -> 83
