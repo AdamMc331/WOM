@@ -13,13 +13,15 @@ import com.adammcneilly.wom.theme.WOMTheme
 import com.adammcneilly.wom.ui.displaymodels.SkillDisplayModel
 import com.adammcneilly.wom.ui.displaymodels.toDisplayModel
 
+private const val SKILL_COLUMNS = 3
+
 @Composable
 fun SkillCard(
     skills: List<SkillDisplayModel>,
     modifier: Modifier = Modifier,
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(3),
+        columns = GridCells.Fixed(SKILL_COLUMNS),
         modifier = modifier,
     ) {
         items(skills) { skill ->
