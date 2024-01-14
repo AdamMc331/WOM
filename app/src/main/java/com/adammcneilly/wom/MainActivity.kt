@@ -16,13 +16,18 @@ import androidx.lifecycle.lifecycleScope
 import com.adammcneilly.wom.api.WiseOldManAPI
 import com.adammcneilly.wom.theme.WOMTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var api: WiseOldManAPI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val api = WiseOldManAPI.getDefault()
 
         lifecycleScope.launch {
             val player = api.getPlayer("theadammc331")

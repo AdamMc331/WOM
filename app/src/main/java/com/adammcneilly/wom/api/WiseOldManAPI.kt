@@ -19,26 +19,6 @@ interface WiseOldManAPI {
 
     companion object {
 
-        private const val BASE_URL = "https://api.wiseoldman.net/"
-
-        fun getDefault(): WiseOldManAPI {
-            val moshi = Moshi.Builder().build()
-
-            val loggingInterceptor = HttpLoggingInterceptor()
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-
-            val client = OkHttpClient
-                .Builder()
-                .addInterceptor(loggingInterceptor)
-                .build()
-
-            return Retrofit
-                .Builder()
-                .client(client)
-                .addConverterFactory(MoshiConverterFactory.create(moshi))
-                .baseUrl(BASE_URL)
-                .build()
-                .create(WiseOldManAPI::class.java)
-        }
+        const val BASE_URL = "https://api.wiseoldman.net/"
     }
 }
