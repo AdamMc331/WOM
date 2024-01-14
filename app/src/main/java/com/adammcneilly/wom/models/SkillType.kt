@@ -24,4 +24,12 @@ enum class SkillType {
     FARMING,
     CONSTRUCTION,
     HUNTER,
+    ;
+
+    fun toSkill(level: Int): Skill {
+        return Skill(
+            skillType = this,
+            level = level,
+        )
+    }
 }

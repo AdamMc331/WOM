@@ -8,9 +8,10 @@ data class SkillDisplayModel(
     val iconRes: Int,
     val level: String,
     val experience: String,
-    val experienceToNext: String,
+    val experienceToNext: String?,
     val rank: String,
     val efficientHoursPlayed: String,
+    val skillName: String,
 )
 
 fun Skill.toDisplayModel(): SkillDisplayModel {
@@ -18,9 +19,10 @@ fun Skill.toDisplayModel(): SkillDisplayModel {
         iconRes = this.skillType.getIconRes(),
         level = this.level.toString(),
         experience = this.experience.toString(),
-        experienceToNext = this.experienceToNext.toString(),
+        experienceToNext = this.experienceToNext?.toString(),
         rank = this.rank.toString(),
         efficientHoursPlayed = this.efficientHoursPlayed.toString(),
+        skillName = this.skillType.getName(),
     )
 }
 
@@ -49,5 +51,33 @@ private fun SkillType.getIconRes(): Int {
         SkillType.FARMING -> R.drawable.ic_farming
         SkillType.CONSTRUCTION -> R.drawable.ic_construction
         SkillType.HUNTER -> R.drawable.ic_hunter
+    }
+}
+
+private fun SkillType.getName(): String {
+    return when (this) {
+        SkillType.ATTACK -> "Attack"
+        SkillType.HITPOINTS -> "Hitpoints"
+        SkillType.MINING -> "Mining"
+        SkillType.STRENGTH -> "Strength"
+        SkillType.AGILITY -> "Agility"
+        SkillType.SMITHING -> "Smithing"
+        SkillType.DEFENCE -> "Defence"
+        SkillType.HERBLORE -> "Herblore"
+        SkillType.FISHING -> "Fishing"
+        SkillType.RANGED -> "Ranged"
+        SkillType.THIEVING -> "Thieving"
+        SkillType.COOKING -> "Cooking"
+        SkillType.PRAYER -> "Prayer"
+        SkillType.CRAFTING -> "Crafting"
+        SkillType.FIREMAKING -> "Firemaking"
+        SkillType.MAGIC -> "Magic"
+        SkillType.FLETCHING -> "Fletching"
+        SkillType.WOODCUTTING -> "Woodcutting"
+        SkillType.RUNECRAFTING -> "Runecrafting"
+        SkillType.SLAYER -> "Slayer"
+        SkillType.FARMING -> "Farming"
+        SkillType.CONSTRUCTION -> "Construction"
+        SkillType.HUNTER -> "Hunter"
     }
 }

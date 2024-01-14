@@ -25,7 +25,6 @@ import androidx.core.view.WindowCompat
 import com.adammcneilly.wom.api.WiseOldManAPI
 import com.adammcneilly.wom.api.dto.WOMPlayerDTO
 import com.adammcneilly.wom.theme.WOMTheme
-import com.adammcneilly.wom.ui.components.SkillIconLevel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -67,23 +66,23 @@ class MainActivity : ComponentActivity() {
                                     .fillMaxWidth()
                                     .padding(16.dp),
                             ) {
-                                SkillIconLevel(
-                                    iconRes = R.drawable.ic_attack,
-                                    level = player.latestSnapshot?.data?.skills?.attack?.level ?: 0,
-                                    skillName = "Attack",
-                                )
-
-                                SkillIconLevel(
-                                    iconRes = R.drawable.ic_hitpoints,
-                                    level = player.latestSnapshot?.data?.skills?.hitpoints?.level ?: 0,
-                                    skillName = "Hitpoints",
-                                )
-
-                                SkillIconLevel(
-                                    iconRes = R.drawable.ic_mining,
-                                    level = player.latestSnapshot?.data?.skills?.mining?.level ?: 0,
-                                    skillName = "Mining",
-                                )
+//                                SkillIconLevel(
+//                                    iconRes = R.drawable.ic_attack,
+//                                    level = player.latestSnapshot?.data?.skills?.attack?.level ?: 0,
+//                                    skillName = "Attack",
+//                                )
+//
+//                                SkillIconLevel(
+//                                    iconRes = R.drawable.ic_hitpoints,
+//                                    level = player.latestSnapshot?.data?.skills?.hitpoints?.level ?: 0,
+//                                    skillName = "Hitpoints",
+//                                )
+//
+//                                SkillIconLevel(
+//                                    iconRes = R.drawable.ic_mining,
+//                                    level = player.latestSnapshot?.data?.skills?.mining?.level ?: 0,
+//                                    skillName = "Mining",
+//                                )
                             }
                         }
                     }
