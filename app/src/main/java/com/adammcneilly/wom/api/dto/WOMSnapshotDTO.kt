@@ -1,6 +1,5 @@
 package com.adammcneilly.wom.api.dto
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -15,5 +14,5 @@ data class WOMSnapshotDTO(
     @Json(name = "importedAt")
     val importedAt: String? = null,
     @Json(name = "playerId")
-    val playerId: Int? = null
+    val playerId: Int? = null,
 )

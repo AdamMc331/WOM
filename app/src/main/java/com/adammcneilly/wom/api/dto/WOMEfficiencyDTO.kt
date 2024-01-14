@@ -1,6 +1,5 @@
 package com.adammcneilly.wom.api.dto
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -11,5 +10,5 @@ data class WOMEfficiencyDTO(
     @Json(name = "rank")
     val rank: Int? = null,
     @Json(name = "value")
-    val value: Double? = null
+    val value: Double? = null,
 )

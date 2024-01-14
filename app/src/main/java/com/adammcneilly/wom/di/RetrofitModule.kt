@@ -14,7 +14,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
-
     @Provides
     fun provideWiseOldManAPI(): WiseOldManAPI {
         val moshi = Moshi

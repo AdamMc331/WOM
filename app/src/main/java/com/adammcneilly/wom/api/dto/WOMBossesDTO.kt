@@ -1,6 +1,5 @@
 package com.adammcneilly.wom.api.dto
 
-
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -125,5 +124,5 @@ data class WOMBossesDTO(
     @Json(name = "zalcano")
     val zalcano: WOMBossDTO? = null,
     @Json(name = "zulrah")
-    val zulrah: WOMBossDTO? = null
+    val zulrah: WOMBossDTO? = null,
 )
