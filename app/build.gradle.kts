@@ -77,9 +77,9 @@ dependencies {
     implementation(libs.compose.ui.tooling)
     implementation(libs.hilt.android)
     implementation(libs.square.moshi.kotlin)
+    implementation(libs.square.okhttp.logging.interceptor)
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.moshi)
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     debugImplementation(platform(libs.compose.bom))
     debugImplementation(libs.compose.ui.test.manifest)
